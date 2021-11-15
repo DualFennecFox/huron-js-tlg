@@ -22,7 +22,7 @@ client.onText(/\/song (.+)/, async (msg, match) => {
 }
 for (let v = 0; v < videos.length; v++) {
 
-  message += `${v+1}: ${vidNameArr[v]}\n\n`
+  message += `${vidNameArr[v]}\n\n`
 }
 
 var menu = [0,2,4,6,8];
