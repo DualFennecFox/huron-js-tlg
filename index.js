@@ -66,7 +66,11 @@ let video = name[q.data -1]
    await client.sendAudio(q.message.chat.id, `./${video.title}.mp3`, { duration: video.duration, title: video.title, 
       thumb: video.thumbnail, performer: video.channel.name, })
 
-  fs.unlink(`${video.title}.mp3`)
+  fs.unlink(`${video.title}.mp3`, function (err) {
+  
+    console.log(err)
+    
+  })
   })
 
 })
