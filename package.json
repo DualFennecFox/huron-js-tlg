@@ -1,0 +1,31 @@
+{
+  "name": "huron",
+  "version": "1.0.1",
+  "description": "solo soy un bot pero en telegram jaja",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "dotenv-flow": "^3.2.0",
+    "fs": "^0.0.1-security",
+    "get-video-id": "^3.4.3",
+    "node-telegram-bot-api": "^0.54.0",
+    "scrape-yt": "^1.4.8",
+    "ytdl-core": "^4.9.1",
+    "ytdl-core-telegram": "^1.0.0"
+  },
+  "engines": {
+    "node": "16.6.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/el-perro-bot-kawaii"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
