@@ -13,8 +13,7 @@
     "get-video-id": "^3.4.3",
     "node-telegram-bot-api": "^0.54.0",
     "scrape-yt": "^1.4.8",
-    "ytdl-core": "^4.9.1",
-    "ytdl-core-telegram": "^1.0.0"
+    "ytdl-core": "^4.9.1"
   },
   "engines": {
     "node": "16.6.x"
