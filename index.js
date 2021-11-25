@@ -6,9 +6,9 @@ const fs = require('fs');
 const client = new Telegram(process.env.TOKEN, {polling: true});
 let id 
 let name
-client.onText(/\/song (.+)/, async (msg, match) => {
+client.on('message', async msg => {
 
-  YT.search(match[1], { type: "video", limit: 10 }).then(async (videos) => {
+  YT.search(msg.replace('/eval', ''), { type: "video", limit: 10 }).then(async (videos) => {
   if (videos.length < 1) return client.sendMessage(msg.chat.id, "No existe ningún resultado con ese nombre.").then(msg => setTimeout(() => client.deleteMessage(msg.chat.id, msg.message_id), 5000))
 
   let vidNameArr = []
