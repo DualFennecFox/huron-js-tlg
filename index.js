@@ -10,7 +10,7 @@ client.on('message', async msg => {
 
 if (!msg.text) return
 
-if (msg.text.startsWith("/song") {
+if (msg.text.startsWith("/song")) {
 
   YT.search(msg.text.replace('/eval', ''), { type: "video", limit: 10 }).then(async (videos) => {
   if (videos.length < 1) return client.sendMessage(msg.chat.id, "No existe ningún resultado con ese nombre.").then(msg => setTimeout(() => client.deleteMessage(msg.chat.id, msg.message_id), 5000))
