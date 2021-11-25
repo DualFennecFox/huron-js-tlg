@@ -8,7 +8,7 @@ let id
 let name
 client.on('message', async msg => {
 
-  YT.search(msg.message.replace('/eval', ''), { type: "video", limit: 10 }).then(async (videos) => {
+  YT.search(msg.text.replace('/eval', ''), { type: "video", limit: 10 }).then(async (videos) => {
   if (videos.length < 1) return client.sendMessage(msg.chat.id, "No existe ningún resultado con ese nombre.").then(msg => setTimeout(() => client.deleteMessage(msg.chat.id, msg.message_id), 5000))
 
   let vidNameArr = []
