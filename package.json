@@ -8,11 +8,18 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "@distube/ytdl-core": "^4.14.4",
+    "axios": "^1.7.7",
     "dotenv-flow": "^3.2.0",
+    "express": "^4.19.2",
+    "ffmpeg-static": "^5.2.0",
     "fs": "^0.0.1-security",
-    "get-video-id": "^3.4.3",
-    "node-telegram-bot-api": "^0.54.0",
+    "get-video-id": "^3.7.0",
+    "node-id3": "^0.2.6",
+    "node-telegram-bot-api": "^0.63.0",
     "scrape-yt": "^1.4.8",
+    "shelljs": "^0.8.5",
+    "youtubei": "^1.5.4",
     "ytdl-core": "^4.9.1"
   },
   "engines": {
