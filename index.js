@@ -1,7 +1,7 @@
 const Telegram = require('node-telegram-bot-api');
 require('dotenv-flow').config();
 const { Client } = require('youtubei')
-const ytdl = require("@distube/ytdl-core")
+const ytdl = require("youtube-dl-exec")
 const fs = require('fs');
 const http = require('http');
 const https = require('https');
@@ -69,15 +69,6 @@ client.on('message', async msg => {
   }
 })
 
-client.on("inline_query", (event) => {
-    console.log(event.query)
-
-    http.request({ host: "127.0.0.1", port: 3000, method: "GET", path: `?s=${event.query}`, headers: {
-      accept: "user/Agent"
-    }}, res => {
-      console.log(res)
-    })
-})
 
 client.on('callback_query', async q => {
 
@@ -90,7 +81,8 @@ client.on('callback_query', async q => {
   }
   let video = videoArr[parseInt(q.data) - 1]
   if (!video) return
-  let audio = ytdl(`https://www.youtube.com/watch?v=${video.id}`, { filter: 'audioonly', quality: 'highestaudio' }).pipe(fs.createWriteStream(`./songs/${video.title}.mp3`))
+  let audio = ytdl.exec(`https://www.youtube.com/watch?v=${video.id}`, { format: "bestaudio", output: "-", cookies: "cookies.txt" }).stdout.pipe(fs.createWriteStream(`./songs/${video.title}.mp3`))
+
   let thumbnail = video.thumbnails.min
   await downloadImage(thumbnail, video.title)
 
@@ -102,6 +94,8 @@ client.on('callback_query', async q => {
       thumb: `./songs/${video.title}.jpg`, performer: video.channel?.name,
     })
 
+fs.rm(`./songs/${video.title}.jpg`, () => {})
+fs.rm(`./songs/${video.title}.mp3`, () => {})
   })
 
 })

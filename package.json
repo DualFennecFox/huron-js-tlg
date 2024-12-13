@@ -19,6 +19,7 @@
     "node-telegram-bot-api": "^0.63.0",
     "scrape-yt": "^1.4.8",
     "shelljs": "^0.8.5",
+    "youtube-dl-exec": "^3.0.10",
     "youtubei": "^1.5.4",
     "ytdl-core": "^4.9.1"
   },
